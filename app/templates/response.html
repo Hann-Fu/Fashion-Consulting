@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Response Page</title>
+</head>
+<body>
+    <h1>Response Page</h1>
+    <!-- 1. Greeting sentence passed to this page -->
+    <p>{{ greeting }}</p>
+
+    <hr>
+
+    <!-- 2. Description and pictures pair -->
+    {% for desc, pic in desc_pic_pairs %}
+        <div>
+            <p>{{ desc }}</p>
+            <!-- The "src" path must match where you store your images, e.g., static/sunrise.jpg -->
+            <img src="{{ pic }}" alt="image" style="max-width:200px;">
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>

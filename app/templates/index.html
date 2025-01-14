@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index Page</title>
+</head>
+<body>
+    <h1>Homepage</h1>
+    <h2>Introduction:</h2>
+    <h3>Type the whatever your idea about daily outfit, you can select the gender and season attributes or type them in the prompt.</h3>
+    <!-- Display flashed messages (if any) -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul style="color: red;">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/">
+        <!-- a. input text -->
+        <label for="user_input">Enter Text:</label>
+        <textarea name="user_input" id="user_input" rows="6" cols="50" style="font-size:16px; width:100%;"></textarea>
+    
+        <br><br>
+
+        <!-- b. Gender radio buttons -->
+        <p>Select your gender (single choice):</p>
+        <label>
+            <input type="radio" name="gender" value="not telling" checked>
+            Not Telling
+        </label><br>
+        <label>
+            <input type="radio" name="gender" value="man">
+            Man
+        </label><br>
+        <label>
+            <input type="radio" name="gender" value="woman">
+            Woman
+        </label><br>
+        <label>
+            <input type="radio" name="gender" value="else">
+            Else
+        </label>
+
+        <br><br>
+
+        <!-- c. Seasons (multi-selection) -->
+        <p>Select season(s) you like (multiple possible):</p>
+        <label>
+            <input type="checkbox" name="seasons" value="spring">
+            Spring
+        </label><br>
+        <label>
+            <input type="checkbox" name="seasons" value="summer">
+            Summer
+        </label><br>
+        <label>
+            <input type="checkbox" name="seasons" value="autumn">
+            Autumn
+        </label><br>
+        <label>
+            <input type="checkbox" name="seasons" value="winter">
+            Winter
+        </label>
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
