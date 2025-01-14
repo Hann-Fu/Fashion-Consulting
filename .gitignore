@@ -1,0 +1,9 @@
+
+.env
+/lab
+/volumes
+/app/static/imgs
+/.idea
+/app/src/__pycache__
+/app/src/extensions/__pycache__
+/app/src/services/__pycache__

@@ -1,0 +1,13 @@
+numpy~=1.26.4
+python-dotenv~=1.0.1
+pillow~=10.4.0
+pymilvus~=2.5.2
+ipython~=8.27.0
+protobuf~=5.29.2
+openai~=1.59.3
+pymysql~=1.1.1
+flask~=3.0.3
+flask-bootstrap~=3.3.7.1
+gunicorn==20.1.0
+google.generativeai==0.8.3
+DBUtils~=3.1.0
