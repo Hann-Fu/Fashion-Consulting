@@ -60,7 +60,7 @@ Source data collected from:
    - A smaller, well-labeled subset from Kaggle used to **bootstrap** and make classification model.
 
 
-## Data Process & Baseline Model
+## Data Process & Baseline Model & Problems
 **Main Issues:**  
 Because raw e-commerce data can be **noisy** (wrong categories, partial or irrelevant, uninformative descriptions), our cleaning steps include:
 
@@ -93,14 +93,14 @@ Classify clothing items into appropriate categories (e.g., Tops, Pants, Outerwea
 
 ### II. Description Authentation & Baseline Retrieval Prototype
 
-#### Overview
-- **Goal**: Improve data-quality modeling and speed when matching image-text pairs.  
-- **Context**: Descriptive text is crucial for queries and product listings (e.g., in e-commerce).
-- **Approach**: Baseline prototype uses CLIP (OpenAI) embeddings (image + text), plus KNN retrieval with a prompt.
+#### Description Authentation
+- **Model**: OpenAI CLIP(Contrastive Language-Image Pre-Training)
+- **Model Capability**: Project images and descriptions to **embeddings** in a same latent space, and calculate the **similarity score** of image and description pair.
+- **Authentation**: Use CLIP processor to make embeddings of our own dataset's image and description pairs, for these similarity score in and below 1st standard deviation, plus description word length < 100, identify as low informative description.
 
 #### Baseline Model
 - **Embeddings**: Images and text are converted into embedding vectors using a CLIP processor.
-- **Retrieval**: KNN (with post-adaptive prompts) matches text to the most similar image embeddings.
+- **Retrieval**: Make embeddings of our dataset then save to a dataframe, execute KNN retrieval for the user's prompt(prompt->embedding->retrieval), matches text to the most similar image or description embeddings.
 
 #### Observations & Issues
 - 1. **Performance**: The baseline can make some sense but often fails to meet expectations.  
@@ -111,6 +111,48 @@ Classify clothing items into appropriate categories (e.g., Tops, Pants, Outerwea
 - 6. **Multi-Type Prompts**: Struggles with prompts referring to multiple items (e.g., tops + pants + outerwear).
 
 
+
+## Solution
+
+#### 1 Metrics & Evaluation
+- **Approach**: Use OpenAI LLMs (GPT api + function calling) to score recommendation quality.  
+- **Flow**:  
+  1. Generate synthetic prompts (e.g. 100 variants).  
+  2. Produce recommended images.  
+  3. Compare with “ground truth.”  
+  4. Evaluator model outputs a subjective score.  
+  5. Average multiple scores.
+  6. Run multiple (e.g. 10) passes then pick the average(eliminate randomness from LLMs).  
+---
+
+#### 2 Speed & Persistence
+Use **vector database** instead of dataframe for persistence and query.
+- **Database**: Switch to Milvus (standalone GPU). Enable  
+- **Index**: HNSW(High recall ANN, support dynamic update)
+- **Partition** :Partition data to different collections by category for better distribution handling.  
+- **Efficiency**: Parallelize queries for high throughput; reduce per-query time from ~10s to ~50ms.
+
+---
+
+#### 3 Prompt Handler
+- **Goal**: Analyze user prompts more deeply (beyond simple keywords), able to decompose a single instruction, summarize, speculate the requirements for each part.  
+- **Example**: (Women + Summer + A pink outfit with cartoon design.) -> {Tops: Attribute, Pants: Attribute, etc.} 
+- **Model**: GPT-4o + Function Calling.
+
+---
+
+#### 4 New Embedding Model: Google Embedding v4
+- **Accessability**: Free, ~1500 RPM (requests per minute).  
+- **Pros**: Excellent at capturing detailed/rare/up-to-date information.  
+- **Cons**: Data will used to improve google's service.
+
+---
+
+#### 5 Description Re-Generation: Google Gemini 1.5 (Beta)
+Re-generate description if an item’s description is deemed “low-informative.”
+- **Benchmark**: (low similarity score) or (word length < 20) identify as low-informative
+- **Model**: Google Gemini-1.5-Flash with function calling
+- **Pricing**: Low cost + 300$ free credits for new account
 
 ## Authors
 
