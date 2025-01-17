@@ -102,6 +102,7 @@ Classify clothing items into appropriate categories (e.g., Tops, Pants, Outerwea
 - **Embeddings**: Images and text are converted into embedding vectors using a CLIP processor.
 - **Retrieval**: Make embeddings of our dataset then save to a dataframe, execute KNN retrieval for the user's prompt(prompt->embedding->retrieval), matches text to the most similar image or description embeddings.
 
+### III. Problems
 #### Observations & Issues
 - 1. **Performance**: The baseline can make some sense but often fails to meet expectations.  
 - 2. **No Evaluation Metric**: Physical criteria (like how “wearable” an item is) are subjective.  
