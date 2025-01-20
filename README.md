@@ -23,8 +23,6 @@ Welcome to the **Fashion Consulting** project! This repository showcases an end-
 
 ![Homepage](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/homepage.png?raw=true)
 
-![Response Page](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/response_page.png?raw=true)
-
 ---
 
 ## Usage
