@@ -21,7 +21,7 @@ Welcome to the **Fashion Consulting** project! This repository showcases an end-
 
 ## Demo
 **Homepage -> Try 1 -> Try2**  
-For same prompt, becuase our ANN retrieval approach and prompt summarize and speculate strategy, it's able to give different response.
+For same prompt, becuase our **ANN Retrieval** approach, prompt analysis and speculation strategy, it's able to give different response.
 ![Homepage](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/homepage_response.png?raw=true)
 
 ---
