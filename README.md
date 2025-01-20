@@ -1,46 +1,66 @@
 # Fashion Consulting Project
 
 Welcome to the **Fashion Consulting** project! This repository showcases an end-to-end system that:  
-- 1. Gathers large-scale clothing data from multiple e-commerce sources,
-- 2. Cleans and refines labels for more reliable training,
-- 3. Empowers AI models to generate better product descriptions and outfit suggestions(One prompt, multi-part recommendation).
+1. Gathers large-scale clothing data from multiple e-commerce sources.  
+2. Cleans and refines labels for more reliable training.  
+3. Empowers AI models to generate better product descriptions and outfit suggestions (one prompt, multi-part recommendation).
 
+---
 
 ## Tech Stack
-**Web Application**: Python, Flask, Mysql   
-**Retrieval**: Milvus   
-**Image Filter**: Pytorch(CNN: DenseNet-121)   
-**LLM API**: gpt-4o(Consulting Services), gemini-1.5-Flash(Description Generation)    
- **Tools**: Git, GitHub, Docker, Linux, Markdown, Colab(Model Training)  
+
+- **Web Application**: Python, Flask, MySQL  
+- **Retrieval**: Milvus  
+- **Image Filter**: PyTorch (CNN: DenseNet-121)  
+- **LLM API**: 
+  - GPT-4o (Consulting Services)  
+  - Gemini-1.5-Flash (Description Generation)  
+- **Tools**: Git, GitHub, Docker, Linux, Markdown, Colab (Model Training)  
+
+---
 
 ## Demo
 
-> ![homepage](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/homepage.png?raw=true)
+![Homepage](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/homepage.png?raw=true)
 
-> ![responsepage](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/response_page.png?raw=true)
+![Response Page](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/response_page.png?raw=true)
 
-#### Usage
+---
 
-- 1. Enter your daily outfit ideas.
-- 2. Choose your gender from the radio buttons.  
-- 3. Select your preferred season(s) using the checkboxes (multiple or no selection are allowed).  
-- 4. Click the "Submit" button to submit your input.
-- 5. Turn to response page, generate the outfit recommendation.
-#### Example use case
+## Usage
 
-> **Prompt 1:** A t-shirt printed with genshin impact character, a black cargo pants, and the leather jacket which Jensen Huang always wears
+1. Enter your daily outfit ideas.  
+2. Choose your gender using the radio buttons.  
+3. Select your preferred season(s) using the checkboxes (multiple or no selections allowed).  
+4. Click the "Submit" button to generate your outfit recommendations.  
+5. View the results on the response page.
 
-> ![Excited GIF](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/9gq0ew.gif?raw=true)
+---
 
-> **Prompt 2:** 一套暖和的，粉色的穿搭。粉色毛茸茸的兔耳朵外套，配一条粉色的时尚运动休闲裤，内搭一个白色T恤印小恐龙图案  
-> **English Translation**: A warm and cozy pink outfit: a fluffy pink jacket with bunny ears, paired with trendy pink sporty joggers, and a white T-shirt featuring a small dinosaur print underneath.
+## Example Use Cases
 
-> ![Excited GIF](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/9gq2wv.gif?raw=true)
+### **Prompt 1**  
+*A t-shirt printed with a Genshin Impact character, black cargo pants, and the leather jacket Jensen Huang always wears.*
 
-> **Prompt 3:** 明日富士山に登る予定なので、North Faceの防風ジャケットと白いインナーTシャツ、そして裏起毛ズボンをください。  
-> **English Translation**: I’m planning to climb Mount Fuji tomorrow, so please give me a North Face windproof jacket, a white inner T-shirt, and fleece-lined pants.
+![GIF](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/9gq0ew.gif?raw=true)
 
-> ![Excited GIF](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/9gq9q4.gif?raw=true)
+---
+
+### **Prompt 2**  
+一套暖和的，粉色的穿搭。粉色毛茸茸的兔耳朵外套，配一条粉色的时尚运动休闲裤，内搭一个白色T恤印小恐龙图案。  
+**English Translation**: *A warm and cozy pink outfit: a fluffy pink jacket with bunny ears, paired with trendy pink sporty joggers, and a white T-shirt featuring a small dinosaur print.*
+
+![GIF](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/9gq2wv.gif?raw=true)
+
+---
+
+### **Prompt 3**  
+明日富士山に登る予定なので、North Faceの防風ジャケットと白いインナーTシャツ、そして裏起毛ズボンをください。  
+**English Translation**: *I’m planning to climb Mount Fuji tomorrow, so please give me a North Face windproof jacket, a white inner T-shirt, and fleece-lined pants.*
+
+![GIF](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/9gq9q4.gif?raw=true)
+
+---
 
 
 ## Project Structure
