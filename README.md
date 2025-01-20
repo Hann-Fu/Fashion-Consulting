@@ -19,7 +19,6 @@ Welcome to the **Fashion Consulting** project! This repository showcases an end-
 
 > ![responsepage](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/response_page.png?raw=true)
 
-
 #### Usage
 
 - 1. Enter your daily outfit ideas.
@@ -42,6 +41,49 @@ Welcome to the **Fashion Consulting** project! This repository showcases an end-
 > **English Translation**: I’m planning to climb Mount Fuji tomorrow, so please give me a North Face windproof jacket, a white inner T-shirt, and fleece-lined pants.
 
 > ![Excited GIF](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/9gq9q4.gif?raw=true)
+
+
+## Project Structure
+```python
+- CLIP_baseline_model/                  # Base Demo made by CLIP and Dataframe + KNN
+- app/                                  # Main application logic and scripts
+  - performance_evaluate/                   # Evaluation for consulting(Scorer)
+    - api_evaluator.py                          # Main logic of api function calling for evaluation
+    - evaluator_prompt.py                       # The prompt for evaluator function calling
+    - prompt_generator.py                       # Generate sythetic prompt for testing & evaluation
+    - src/
+      - extensions/                     # Initialization for apis, dbs
+        - __init__.py
+        - chatgpt_client.py
+        - gemini_client.py
+        - milvus_connection.py
+        - mysql_connection_pool.py
+      - services/                       # Main consulting logic
+        - __init__.py
+        - consulting_service.py             # The main code of how program process prompt, retrieval, output
+        - handlers.py                       # The function calling prompt for analyzing user's prompt
+    - templates/                        # Web page htmls
+      - index.html
+      - response.html
+    - Dockerfile
+    - app.py                            # Entrance for this application
+    - requirements.txt
+    - test.py                           # A test for execute consulting in python
+- data_clean/
+  - gemini_description_generator.py     # Example code of how we use api to clean/ re-generate our data
+- db_initialize/                        # db initialization
+  - embeddings.sql                          # Structure of embeddings meta data in mysql
+  - item_info.sql                           # Structure of merchants meta data
+  - milvus.py                               # Initialize Milvus db, create index
+- model training/                       # Some machine/deep learning small project I previously done
+  - CNN/
+    - type classifier.ipynb             # A CNN for filtering the images
+  - kaggle machine learning/
+    - advanced_regression/              # Kaggle - House Prices(House Price prediction)
+    - time_series/                      # Kaggle - Elo Merchant(Customer loyalty prediction)
+- docker-compose.yml
+```
+
 ## Data Colletion
 
 Source data collected from:
