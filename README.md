@@ -21,7 +21,7 @@ Welcome to the **Fashion Consulting** project! This repository showcases an end-
 
 ## Demo
 
-![Homepage](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/homepage.png?raw=true)
+![Homepage](https://github.com/Hann-Fu/Fashion-Consulting/blob/main/media/homepage_response.png?raw=true)
 
 ---
 
