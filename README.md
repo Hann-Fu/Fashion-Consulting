@@ -7,10 +7,11 @@ Welcome to the **Fashion Consulting** project! This repository showcases an end-
 
 
 ## Tech Stack
-**Web & AI Services:** Python, Java, PyTorch, Flask  
-**AI api:** gpt-4o, gemini-1.5-Flash  
-**Databases:** MySQL, Milvus  
-**Tools:** Git, GitHub, Docker, Linux, Markdown  
+**Web Application**: Python, Flask, Mysql   
+**Retrieval**: Milvus   
+**Image Filter**: Pytorch(CNN: DenseNet-121)   
+**LLM API**: gpt-4o(Consulting Services), gemini-1.5-Flash(Description Generation)    
+ **Tools**: Git, GitHub, Docker, Linux, Markdown, Colab(Model Training)  
 
 ## Demo
 
