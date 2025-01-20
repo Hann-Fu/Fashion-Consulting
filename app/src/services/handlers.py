@@ -81,11 +81,6 @@ handler_beta_v1 = {
     "required": ["polite_reply", "analysis"],
     }
 
-'''
-Prompt generator act like a user, it will generate 10 prompts in different aspects, 
-like color, style, material, style, fit, occasion, seasonality, pattern, unique design, and part they desired(implicitly).
-output: 10 prompts in different aspects in a list.
-'''
 
 
 
