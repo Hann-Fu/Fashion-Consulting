@@ -151,9 +151,9 @@ Classify clothing items into appropriate categories (e.g., Tops, Pants, Outerwea
 
 ---
 
-### II. Description Authentation & Baseline Retrieval Prototype
+### II. Description Authentication & Baseline Retrieval Prototype
 
-#### Description Authentation
+#### Description Authentication
 - **Model**: OpenAI CLIP(Contrastive Language-Image Pre-Training)
 - **Model Capability**: Project images and descriptions to **embeddings** in a same latent space, and calculate the **similarity score** of image and description pair.
 - **Authentation**: Use CLIP processor to make embeddings of our own dataset's image and description pairs, for these similarity score in and below 1st standard deviation, plus description word length < 100, identify as low informative description.
