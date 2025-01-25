@@ -156,7 +156,7 @@ Classify clothing items into appropriate categories (e.g., Tops, Pants, Outerwea
 #### Description Authentication
 - **Model**: OpenAI CLIP(Contrastive Language-Image Pre-Training)
 - **Model Capability**: Project images and descriptions to **embeddings** in a same latent space, and calculate the **similarity score** of image and description pair.
-- **Authentation**: Use CLIP processor to make embeddings of our own dataset's image and description pairs, for these similarity score in and below 1st standard deviation, plus description word length < 100, identify as low informative description.
+- **Authentation**: Use CLIP processor to make embeddings of our own dataset's image and description pairs, for these similarity score in and below 1st standard deviation, plus description words count < 20, identify as low informative description.
 
 #### Baseline Model
 - **Embeddings**: Images and text are converted into embedding vectors using a CLIP processor.
@@ -211,7 +211,7 @@ Use **vector database** instead of dataframe for persistence and query.
 
 #### 5 Description Re-Generation: Google Gemini 1.5 (Beta)
 Re-generate description if an item’s description is deemed “low-informative.”
-- **Benchmark**: (low similarity score) or (word length < 20) identify as low-informative
+- **Benchmark**: (low similarity score) or (words count < 20) identify as low-informative
 - **Model**: Google Gemini-1.5-Flash with function calling
 - **Pricing**: Low cost + 300$ free credits for new account
 
